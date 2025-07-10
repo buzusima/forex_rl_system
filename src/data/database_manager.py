@@ -239,12 +239,16 @@ class DatabaseManager:
                 # Select relevant columns
                 columns = ['symbol', 'timeframe', 'timestamp', 'open', 'high', 'low', 'close']
                 
-                # Add optional columns if they exist
+                # Add optional columns if they exist and convert data types
                 if 'tick_volume' in data_to_save.columns:
+                    # Convert to int32 to avoid SQLite issues
+                    data_to_save['tick_volume'] = data_to_save['tick_volume'].astype('int32')
                     columns.append('tick_volume')
                 if 'spread' in data_to_save.columns:
                     columns.append('spread')
                 if 'real_volume' in data_to_save.columns:
+                    # Convert to int32 to avoid SQLite issues
+                    data_to_save['real_volume'] = data_to_save['real_volume'].astype('int32')
                     columns.append('real_volume')
                 
                 data_to_save = data_to_save[columns].copy()

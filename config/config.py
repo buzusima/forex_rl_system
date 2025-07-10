@@ -29,20 +29,8 @@ class ForexRLConfig:
         'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD',
         'CADCHF', 'CADJPY', 'CHFJPY', 
         'NZDCAD', 'NZDCHF', 'NZDJPY'
-        'EURUSD', 'GBPUSD', 'USDCHF', 'USDJPY', 
-        'AUDUSD', 'NZDUSD', 'USDCAD',
         
-        # EUR Crosses (6 คู่)
-        'EURAUD', 'EURCAD', 'EURCHF', 'EURGBP', 
-        'EURJPY', 'EURNZD',
         
-        # GBP Crosses (5 คู่)
-        'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPJPY', 'GBPNZD',
-        
-        # Other Crosses (8 คู่)
-        'AUDCAD', 'AUDCHF', 'AUDJPY', 'AUDNZD',
-        'CADCHF', 'CADJPY', 'CHFJPY', 
-        'NZDCAD', 'NZDCHF', 'NZDJPY'
     ]
     
     # ============= TIMEFRAMES =============
@@ -321,4 +309,3 @@ if __name__ == "__main__":
     print(f"💾 Database: {config.DATABASE_CONFIG['TYPE']}")
     print(f"🤖 RL Algorithm: {config.RL_CONFIG['ALGORITHM']}")
     
- 

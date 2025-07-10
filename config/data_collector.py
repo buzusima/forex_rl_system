@@ -347,12 +347,8 @@ class DataCollector:
                 filename
             )
             
-            # Save to CSV
+            # Save to CSV only (avoid parquet issues)
             data.to_csv(filepath)
-            
-            # Also save as parquet for better performance
-            parquet_path = filepath.replace('.csv', '.parquet')
-            data.to_parquet(parquet_path)
             
             logger.debug(f"💾 Saved {symbol} {timeframe} data to {filename}")
             

@@ -1,0 +1,347 @@
+{
+  "trading_settings": {
+    "symbol": "XAUUSD",
+    "lot_size": 0.01,
+    "max_positions": 5,
+    "anti_hedge": true,
+    "trading_enabled": true
+  },
+  
+  "signal_parameters": {
+    "rsi_period": 14,
+    "rsi_up": 55,
+    "rsi_down": 45,
+    "fractal_period": 5,
+    "fractal_lookback": 5,
+    "min_signal_interval": 60
+  },
+  
+  "timeframes": {
+    "entry_tf": "M1",
+    "trend_tf": "M15",
+    "bias_tf": "H1",
+    "require_tf_alignment": true,
+    "tf_weights": {
+      "entry": 0.4,
+      "trend": 0.35,
+      "bias": 0.25
+    }
+  },
+  
+  "multi_tf_thresholds": {
+    "trend_bullish_threshold": 50,
+    "trend_bearish_threshold": 50,
+    "bias_strong_bull": 55,
+    "bias_strong_bear": 45,
+    "bias_neutral_upper": 52,
+    "bias_neutral_lower": 48
+  },
+  
+  "risk_management": {
+    "daily_loss_limit": 100,
+    "max_daily_trades": 20,
+    "max_drawdown_percent": 15,
+    "emergency_stop_loss": 200,
+    "position_size_scaling": true,
+    "risk_per_trade_percent": 2.0
+  },
+  
+  "take_profit": {
+    "enable_tp": false,
+    "tp_points": 200,
+    "dynamic_tp": false,
+    "tp_multiplier": 1.5,
+    "trailing_stop": false,
+    "trailing_points": 50
+  },
+  
+  "recovery_system": {
+    "enable_recovery": true,
+    "recovery_trigger_points": 100,
+    "martingale_multiplier": 2.0,
+    "max_recovery_levels": 3,
+    "recovery_wait_bars": 3,
+    "smart_recovery": true
+  },
+  
+  "spread_management": {
+    "max_spread_points": 50,
+    "spread_filter_enabled": true,
+    "spread_multiplier": 1.5,
+    "spread_buffer": 5,
+    "dynamic_spread_adjustment": true
+  },
+  
+  "session_filters": {
+    "enable_session_filter": false,
+    "allowed_sessions": ["London", "NewYork"],
+    "avoid_asian_session": false,
+    "session_overlap_only": false,
+    "weekend_trading": false
+  },
+  
+  "news_filter": {
+    "enable_news_filter": false,
+    "news_impact_levels": ["High"],
+    "stop_before_news_minutes": 30,
+    "resume_after_news_minutes": 60,
+    "news_symbols": ["USD", "EUR", "GBP"]
+  },
+  
+  "volatility_filter": {
+    "enable_volatility_filter": true,
+    "atr_period": 14,
+    "min_atr_threshold": 10,
+    "max_atr_threshold": 100,
+    "volatility_scaling": true
+  },
+  
+  "execution_settings": {
+    "execution_mode": "MARKET",
+    "slippage_points": 20,
+    "max_retries": 3,
+    "retry_delay_ms": 1000,
+    "fill_or_kill": false,
+    "partial_fill_allowed": true
+  },
+  
+  "monitoring": {
+    "check_interval_seconds": 30,
+    "log_level": "INFO",
+    "save_signals_history": true,
+    "performance_tracking": true,
+    "real_time_alerts": true,
+    "telegram_notifications": false
+  },
+  
+  "gui_settings": {
+    "theme": "dark",
+    "auto_refresh_seconds": 5,
+    "show_chart_overlay": true,
+    "compact_mode": false,
+    "always_on_top": false,
+    "minimize_to_tray": true
+  },
+  
+  "advanced_features": {
+    "machine_learning": false,
+    "pattern_recognition": false,
+    "sentiment_analysis": false,
+    "correlation_filter": false,
+    "seasonal_adjustment": false
+  },
+  
+  "presets": {
+    "scalping": {
+      "entry_tf": "M1",
+      "trend_tf": "M5",
+      "bias_tf": "M15",
+      "rsi_up": 60,
+      "rsi_down": 40,
+      "check_interval_seconds": 15,
+      "lot_size": 0.01,
+      "max_positions": 5,
+      "daily_loss_limit": 100,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "intraday": {
+      "entry_tf": "M15",
+      "trend_tf": "H1", 
+      "bias_tf": "H4",
+      "rsi_up": 55,
+      "rsi_down": 45,
+      "check_interval_seconds": 60,
+      "lot_size": 0.01,
+      "max_positions": 5,
+      "daily_loss_limit": 100,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "swing": {
+      "entry_tf": "H1",
+      "trend_tf": "H4",
+      "bias_tf": "D1", 
+      "rsi_up": 50,
+      "rsi_down": 50,
+      "check_interval_seconds": 300,
+      "lot_size": 0.01,
+      "max_positions": 3,
+      "daily_loss_limit": 50,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "aggressive_scalping": {
+      "entry_tf": "M1",
+      "trend_tf": "M1",
+      "bias_tf": "M5",
+      "rsi_up": 65,
+      "rsi_down": 35,
+      "check_interval_seconds": 10,
+      "lot_size": 0.02,
+      "max_positions": 10,
+      "daily_loss_limit": 200,
+      "require_tf_alignment": false,
+      "rsi_period": 14,
+      "fractal_period": 3,
+      "anti_hedge": false
+    },
+    
+    "conservative_swing": {
+      "entry_tf": "H4",
+      "trend_tf": "D1",
+      "bias_tf": "W1",
+      "rsi_up": 52,
+      "rsi_down": 48,
+      "check_interval_seconds": 600,
+      "lot_size": 0.05,
+      "max_positions": 3,
+      "daily_loss_limit": 50,
+      "require_tf_alignment": true,
+      "rsi_period": 21,
+      "fractal_period": 7,
+      "anti_hedge": true
+    },
+    
+    "news_trading": {
+      "entry_tf": "M5",
+      "trend_tf": "M15",
+      "bias_tf": "M30",
+      "rsi_up": 70,
+      "rsi_down": 30,
+      "check_interval_seconds": 20,
+      "lot_size": 0.01,
+      "max_positions": 2,
+      "daily_loss_limit": 30,
+      "require_tf_alignment": false,
+      "rsi_period": 9,
+      "fractal_period": 3,
+      "anti_hedge": true
+    },
+    
+    "trend_following": {
+      "entry_tf": "M30",
+      "trend_tf": "H1",
+      "bias_tf": "H4",
+      "rsi_up": 55,
+      "rsi_down": 45,
+      "check_interval_seconds": 120,
+      "lot_size": 0.03,
+      "max_positions": 5,
+      "daily_loss_limit": 100,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "breakout_trading": {
+      "entry_tf": "M15",
+      "trend_tf": "M30",
+      "bias_tf": "H1",
+      "rsi_up": 60,
+      "rsi_down": 40,
+      "check_interval_seconds": 45,
+      "lot_size": 0.02,
+      "max_positions": 7,
+      "daily_loss_limit": 150,
+      "require_tf_alignment": false,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": false
+    },
+    
+    "safe_trading": {
+      "entry_tf": "H1",
+      "trend_tf": "H4",
+      "bias_tf": "D1",
+      "rsi_up": 53,
+      "rsi_down": 47,
+      "check_interval_seconds": 300,
+      "lot_size": 0.01,
+      "max_positions": 3,
+      "daily_loss_limit": 25,
+      "require_tf_alignment": true,
+      "rsi_period": 21,
+      "fractal_period": 7,
+      "anti_hedge": true
+    },
+    
+    "london_session": {
+      "entry_tf": "M15",
+      "trend_tf": "M30",
+      "bias_tf": "H1",
+      "rsi_up": 58,
+      "rsi_down": 42,
+      "check_interval_seconds": 60,
+      "lot_size": 0.02,
+      "max_positions": 5,
+      "daily_loss_limit": 75,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "asian_session": {
+      "entry_tf": "M30",
+      "trend_tf": "H1",
+      "bias_tf": "H4",
+      "rsi_up": 55,
+      "rsi_down": 45,
+      "check_interval_seconds": 180,
+      "lot_size": 0.01,
+      "max_positions": 3,
+      "daily_loss_limit": 40,
+      "require_tf_alignment": true,
+      "rsi_period": 14,
+      "fractal_period": 5,
+      "anti_hedge": true
+    },
+    
+    "volatile_market": {
+      "entry_tf": "M5",
+      "trend_tf": "M15",
+      "bias_tf": "M30",
+      "rsi_up": 65,
+      "rsi_down": 35,
+      "check_interval_seconds": 30,
+      "lot_size": 0.01,
+      "max_positions": 8,
+      "daily_loss_limit": 120,
+      "require_tf_alignment": false,
+      "rsi_period": 9,
+      "fractal_period": 3,
+      "anti_hedge": false
+    },
+    
+    "calm_market": {
+      "entry_tf": "H1",
+      "trend_tf": "H4",
+      "bias_tf": "D1",
+      "rsi_up": 52,
+      "rsi_down": 48,
+      "check_interval_seconds": 600,
+      "lot_size": 0.03,
+      "max_positions": 4,
+      "daily_loss_limit": 60,
+      "require_tf_alignment": true,
+      "rsi_period": 21,
+      "fractal_period": 7,
+      "anti_hedge": true
+    }
+  },
+  
+  "version": "1.0.0",
+  "last_updated": "2024-07-11T18:05:00Z",
+  "config_hash": ""
+}
